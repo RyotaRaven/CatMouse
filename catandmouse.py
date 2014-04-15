@@ -5,22 +5,29 @@ import brain_dna
 from pygame.locals import *
 
 #CHEESE CLASS
+""" Cheese will spawn in a random location based on timer. """
 class Cheese:
     def __init__(self):
         self.x = randint(0,800)
         self.y = randint(0,600)
 
 #MOUSE CLASS
+""" Mice will spawn in random locations based on breeding.
+    15 units; 2 unit breeding delay. """
 class Mouse:
     def __init__(self):
         self.x = randint(0,800);
         self.y = randint(0,600);
+        self.velocity = 15
 
 #CAT CLASS
+""" Mice will spawn in random locations based on breeding.
+    10 units; 4 unit breeding delay. """
 class Cat:
     def __init__(self):
         self.x = randint(0,800);
         self.y = randint(0,600);
+        self.velocity = 10
 
 
 pygame.init()
@@ -33,10 +40,6 @@ FPSCLOCK = pygame.time.Clock()
 display = pygame.display.set_mode((800,600), 0, 32)
 
 BLACK = (0,0,0)
-WHITE = (255, 255, 255)
-YELLOW = (255, 255, 0)
-GREY = (192, 192, 192)
-BROWN = (205, 133, 63)
 
 def game_function(ann, do_display):
     random.seed(0)
@@ -55,7 +58,7 @@ def game_function(ann, do_display):
         allMice.append(Mouse())
 
     #initalizing starting cheese
-    for i in range(3):
+    for i in range(2):
         allCats.append(Cat())
 
     #game loop
@@ -68,12 +71,6 @@ def game_function(ann, do_display):
         if (do_display):
             #background work
             display.fill(BLACK)
-
-            #Squares should be 50 x 50 (maybe less)
-            for row in range (800/50):
-                for col in range (600/50):
-                    tile = pygame.Rect(row, col, 50, 50)
-                    pygame.draw.rect(display,WHITE, tile, 0)
 
             #draw cheeses
 
