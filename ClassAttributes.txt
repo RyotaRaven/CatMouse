@@ -22,3 +22,39 @@ Cheese:
     -x/y locatoin
     -doesnt move
     -refills mouse hunger timer
+
+
+--Project Ideas--
+    -Cat and Mouse meet
+	*mouse dies
+	*cat timer reset
+    -Mouse meets cheese
+	*mouse timer reset
+	*cheese disappears
+    -Mouse meets Mouse/ Cat meets Cat
+	*Breed - one new child appears
+	*Crossover of parents evolution with X% 
+	*Breeding delay
+    -Possible timer uses
+	*timer runs out = DEATH
+	*timer at certain point = don't breed seek food
+
+
+--Maybe--
+    -Red X for death
+    -eating slows for a limited time (they sleep after eating and don't move)
+    -possible mouse hole implimentation
+    -if two cats encounter mouse at the same time they could fight (maybe)
+    -Genders?
+	*same gender meeting = fighting
+	*different gender = breeding
+    -narrative
+    -GUI sliders
+
+
+
+
+
+
+       
+    
