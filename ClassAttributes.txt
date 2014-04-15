@@ -1,0 +1,24 @@
+Mice:
+    -Start with 3(?) Mice
+    -15 units speed
+    -2units breeding delay
+    -life timer
+    -hunger timer
+    -inputs:
+	*where is closest cheese?
+	*where is cat?
+    -fills up cat hunger timer
+
+Cat:
+    -Start with 2(?) Cats
+    -10 units speed
+    -4 units breeding delay
+    -life timer
+    -hunger timer
+    -inputs:
+	*where is closest mouse?
+Cheese:
+    -spawns by timer in random location
+    -x/y locatoin
+    -doesnt move
+    -refills mouse hunger timer
