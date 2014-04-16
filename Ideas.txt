@@ -15,4 +15,5 @@
 
 
 								--Current Issues--
-	-Images need to be resized
+	-Banner's a fatty
+	-It seems like every time i run they appear in the same random locations on the screen...hmm...
