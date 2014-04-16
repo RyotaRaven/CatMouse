@@ -6,4 +6,13 @@
 	is in order to determine fitnesses. 
 	-exit the game after three minutes, then mutate the brains of the lowest fitness group? ideally each cat has its own neural network...i would think.
 	-same counting method could be used for other timers.....a counter that counts down after each frame and then when they eat it adds to the timer and/or
-	is completely refilled and we can use its value to check if they can breed or not. like if(hunger>=??and canBreed):
+	is completely refilled and we can use its value to check if they can breed or not. like if(hunger>=??and canBreed): this one boolean can also keep track
+	of when its too hungry to breed
+
+
+								--Current Goals--
+	-set up a file to do the neuroevolution=>focus on getting rats to work first
+
+
+								--Current Issues--
+	-Images need to be resized
