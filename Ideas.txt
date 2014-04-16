@@ -5,3 +5,5 @@
 	-can output a list that is like [#ofMice, MiceLongestLife, #ofCats, CatsLongestLife] to see all of the performances and we just know where each
 	is in order to determine fitnesses. 
 	-exit the game after three minutes, then mutate the brains of the lowest fitness group? ideally each cat has its own neural network...i would think.
+	-same counting method could be used for other timers.....a counter that counts down after each frame and then when they eat it adds to the timer and/or
+	is completely refilled and we can use its value to check if they can breed or not. like if(hunger>=??and canBreed):
