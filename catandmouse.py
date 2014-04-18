@@ -113,7 +113,7 @@ def game_function(ann, do_display):
 
         #need to figure out how to return
         #scores for both cats and mice?
-        return 0
+    return 0
 
 if (__name__ == '__main__'):
         from brain_dna import neuron
