@@ -8,16 +8,16 @@ from pygame.locals import *
 """ Cheese will spawn in a random location based on timer. """
 class Cheese:
     def __init__(self):
-        self.x = random.uniform(0,800)
-        self.y = random.uniform(0,600)
+        self.x = random.randrange(0,800)
+        self.y = random.randrange(300,880)
 
 #MOUSE CLASS
 """ Mice will spawn in random locations based on breeding.
     15 units; 2 unit breeding delay. """
 class Mouse:
     def __init__(self):
-        self.x = random.uniform(0,800)
-        self.y = random.uniform(0,600)
+        self.x = random.randrange(0,800)
+        self.y = random.randrange(300,880)
         self.velocity = 15
         self.life=100 #lifevalue (size?)
         self.canBreed=True
@@ -28,8 +28,8 @@ class Mouse:
     10 units; 4 unit breeding delay. """
 class Cat:
     def __init__(self):
-        self.x = random.uniform(0,800)
-        self.y = random.uniform(0,600)
+        self.x = random.randrange(0,800)
+        self.y = random.randrange(300,880)
         self.velocity = 10
         self.life=100 #lifevalue (size?)
         self.hunger=50 #idk how big to make the hunger
@@ -46,7 +46,7 @@ display = pygame.display.set_mode((891,880), 0, 32)
 BLACK = (0,0,0)
 
 def game_function(ann, do_display):
-    random.seed(0)
+    random.seed()
     mouse= pygame.image.load("Mouse.png")
     mouse.convert()
     cat= pygame.image.load("Cat.png")
