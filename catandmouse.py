@@ -22,6 +22,7 @@ class Mouse:
         self.life=100 #lifevalue (size?)
         self.canBreed=True
         self.hunger=50 #idk how big to make the hunger timer
+        
 
 #CAT CLASS
 """ Mice will spawn in random locations based on breeding.
@@ -77,8 +78,109 @@ def game_function(ann, do_display):
     #game loop
     while (len(allMice) != 0 and len(allCats) != 0):
         #update state
+        mouseInputX=[] #goes to cat
+        mouseInputY=[]
+        catInputX=[] #goes to mouse
+        catInputY=[]
+        cheeseInputX=[] #goes to both
+        cheeseInputY=[]
 
+        #setting up ANN inputs
+        for i in range (len(allCats)):
+            for x in range(len(allMice)):
+                mouseInputX.append(allCats[i].x-allMice[x].x)
+                mouseInputY.append(allCats[i].y-allMice[x].y)
+        for i in range (len(allMice)):
+            for x in range(len(allCheese)):
+                cheeseInputX.append(allMice[i].x-allCheese[x].x)
+                cheeseInputY.append(allMice[i].y-allCheese[x].y)
+        for i in range (len(allMice)):
+            for x in range(len(allCats)):
+                catInputX.append(allMice[i].x-allCats[x].x)
+                catInputY.append(allMice[i].y-allCats[x].y)
+        isMouse=0
+        isCat=1
+
+        MmoveX=ann.run(catInputX,cheeseInputX, isMouse)
+        MmoveY=ann.run(catInputY,cheeseInputY, isMouse)
+        CmoveX=ann.run(mouseInputX,cheeseInputX, isCat)
+        CmoveY=ann.run(mouseInputY,cheeseInputY, isCat)
+    
+        #eating
+        mouseRect= Rect(allMice[0].x,allMice[0].y,40,33)
+        catRect= Rect(allCats[0].x,allCats[0].y,40,33)
+        for i in range (len(allMice)):
+            for x in range (len(allCats)):
+                mouseRect=Rect(allMice[i].x,allMice[i].y,40,33)
+                catRect= Rect(allCats[x].x,allCats[x].y,40,33)
+                if(mouseRect.colliderect(catRect)):
+                    allMice.remove(i)
+        cheeseRect= Rect(allCheese[0].x,allCheese[0].y,40,33)
+        for i in range (len(allMice)):
+            for x in range (len(allCheese)):
+                mouseRect=Rect(allMice[i].x,allMice[i].y,40,33)
+                catRect= Rect(allCheese[x].x,allCheese[x].y,40,33)
+                if(mouseRect.colliderect(catRect)):
+                    allCheese.remove(i)
+
+
+        for i in range (len(allMice)):
+            if(allMice[i].x<=0):
+                allMice[i].x=0
+        for i in range (len(allMice)):
+            if(allMice[i].x>=800):
+                allMice[i].x=800
+        for i in range (len(allMice)):
+            if(allMice[i].y<=300):
+                allMice[i].y=300
+        for i in range (len(allMice)):
+            if(allMice[i].y>=880):
+                allMice[i].y=880
+                
+        for i in range (len(allCats)):
+            if(allCats[i].x<=0):
+                allCats[i].x=0
+        for i in range (len(allCats)):
+            if(allCats[i].x>=800):
+                allCats[i].x=800
+        for i in range (len(allCats)):
+            if(allCats[i].y<=300):
+                allCats[i].y=300
+        for i in range (len(allCats)):
+            if(allCats[i].y>=880):
+                allCats[i].y=880
+            
+                
         #handle events
+        
+        if (MmoveX < 0):
+            #mouse moves left
+        elif (MmoveX > 0):
+            #mouse moves right
+        else:
+            #mouse x does not change
+
+        if (MmoveY < 0):
+            #mouse moves down
+        elif (MmoveY > 0):
+            #mouse moves up
+        else:
+            #mouse y does not change
+
+
+        if (CmoveX < 0):
+            #cat moves left
+        elif (CmoveX > 0):
+            #cat moves right
+        else:
+            #cat x does not change
+
+        if (CmoveY < 0):
+            #cat moves down
+        elif (CmoveY > 0):
+            #cat moves up
+        else:
+            #cat y does not change
         
         #display
         if (do_display):
