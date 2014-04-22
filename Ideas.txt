@@ -17,3 +17,6 @@
 								--Current Issues--
 	-Banner's a fatty
 	-It seems like every time i run they appear in the same random locations on the screen...hmm...
+	-Not sure how to generalize the nueral network to take a different amount of inputs for the cat and mouse. we may need to have....seperate
+	files...but also that maybe each cat/mouse has their own not sure how to impliment that either instead of them all having the same though
+	for now that may be easier im not sure if that could do individual outputs they would move in mass....idk D:s
