@@ -41,7 +41,7 @@ FPS = 30
 FPSCLOCK = pygame.time.Clock()
 
 #set up display
-display = pygame.display.set_mode((800,600), 0, 32)
+display = pygame.display.set_mode((891,880), 0, 32)
 
 BLACK = (0,0,0)
 
@@ -84,7 +84,7 @@ def game_function(ann, do_display):
         if (do_display):
             #background work
             display.fill(BLACK)
-            display.blit(floor, (0,0))
+            display.blit(floor, (0,280))
             display.blit(banner,(0,0))
             
 
