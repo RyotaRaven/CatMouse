@@ -153,33 +153,33 @@ def game_function(ann, do_display):
                 
         #handle events
         
-        if (MmoveX < 0):
+        #if (MmoveX < 0):
             #mouse moves left
-        elif (MmoveX > 0):
+        #elif (MmoveX > 0):
             #mouse moves right
-        else:
+        #else:
             #mouse x does not change
 
-        if (MmoveY < 0):
+        #if (MmoveY < 0):
             #mouse moves down
-        elif (MmoveY > 0):
+        #elif (MmoveY > 0):
             #mouse moves up
-        else:
+        #else:
             #mouse y does not change
 
 
-        if (CmoveX < 0):
+        #if (CmoveX < 0):
             #cat moves left
-        elif (CmoveX > 0):
+        #elif (CmoveX > 0):
             #cat moves right
-        else:
+        #else:
             #cat x does not change
 
-        if (CmoveY < 0):
+        #if (CmoveY < 0):
             #cat moves down
-        elif (CmoveY > 0):
+        #elif (CmoveY > 0):
             #cat moves up
-        else:
+        #else:
             #cat y does not change
         
         #display

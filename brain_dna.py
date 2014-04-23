@@ -47,21 +47,21 @@ class neuron:
 
     def run(self,input1, input2, mOrC):
         total_signal=0.0
-        val = 0.0
-        for k in (len(input1)):
+        val = 0.0 
+        """for k in (len(input1)):
             total_signal+=self.weights[k%4]*input1[k]
         if total_signal>0.0:
             val = 1.0
         elif total_signal < 0.0:
-            val =  -1.0
+            val =  -1.0"""
         #If it is a mouse
-        if (mOrC = 0):
+        """if (mOrC == 0):
             for k in (len(input2)):
                 total_signal-=self.weights[k%4]*input2[k]
             if total_signal>0.0:
                 val = 1.0
             elif total_signal < 0.0:
-                val = -1.0
+                val = -1.0"""
         return val
 
 
