@@ -25,14 +25,14 @@ for generation in range(generations):
     print generation, population[0].fitness
     new_population = [best]
     for x in range(1,pop_size):
-    if random.random()<0.5:
-        child=random.choice(population).mutate()
-    new_population.append(child)
-    else:
-        p1 = random.choice(population)
-        p2 = random.choice(population)
-        child=p1.crossover(p2)
-        new_population.append(child)
+        if random.random()<0.5:
+            child=random.choice(population).mutate()
+            new_population.append(child)
+        else:
+            p1 = random.choice(population)
+            p2 = random.choice(population)
+            child=p1.crossover(p2)
+            new_population.append(child)
     population=new_population
 
 

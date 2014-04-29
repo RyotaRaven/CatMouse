@@ -112,8 +112,8 @@ def game_function(ann, do_display):
 
         #MmoveX=ann.run(catInputX,cheeseInputX, isMouse)
         #MmoveY=ann.run(catInputY,cheeseInputY, isMouse)
-        MmoveX=-10;
-        MmoveY=-10;
+        #MmoveX=-10;
+        #MmoveY=-10;
         #CmoveX=ann.run(mouseInputX,cheeseInputX, isCat)
         #CmoveY=ann.run(mouseInputY,cheeseInputY, isCat)
     
@@ -165,26 +165,25 @@ def game_function(ann, do_display):
                 
         #handle events
         
-        if(MmoveX < 0):
-                for i in range(len(allMice)):
-                    allMice[i].x-=allMice[i].velocity
-        elif(MmoveX > 0):
-                for i in range(len(allMice)):
-                    allMice[i].x+=allMice[i].velocity
-            #mouse moves right
-        #else:
-            #mouse x does not change
+        for i in range (len(allMice)):
+            MmoveX = ann.run(catInputX,cheeseInputX, isMouse)
+            if(MmoveX < 0):
+                allMice[i].x-=allMice[i].velocity
+            elif(MmoveX > 0):
+                allMice[i].x+=allMice[i].velocity
+            else:
+                allMice[i].x = allMice[i].x
+                #mouse x does not change
 
-        if(MmoveY < 0):
-                for i in range(len(allMice)):
-                    allMice[i].y-=allMice[i].velocity
-            #mouse moves down
-        elif(MmoveY > 0):
-                for i in range(len(allMice)):
-                    allMice[i].y+=allMice[i].velocity
-            #mouse moves up
-        #else:
-            #mouse y does not change
+        for i in range (len(allMice)):
+            MmoveY = ann.run(catInputY,cheeseInputY, isMouse)
+            if(MmoveX < 0):
+                allMice[i].y-=allMice[i].velocity
+            elif(MmoveX > 0):
+                allMice[i].y+=allMice[i].velocity
+            else:
+                allMice[i].y = allMice[i].y
+                #mouse y does not change
 
 
         #if (CmoveX < 0):
