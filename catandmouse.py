@@ -109,39 +109,34 @@ def game_function(ann, do_display):
                 catInputY.append(allMice[i].y-allCats[x].y)
         isMouse=0
         isCat=1
-
-        #MmoveX=ann.run(catInputX,cheeseInputX, isMouse)
-        #MmoveY=ann.run(catInputY,cheeseInputY, isMouse)
-        #MmoveX=-10;
-        #MmoveY=-10;
-        #CmoveX=ann.run(mouseInputX,cheeseInputX, isCat)
-        #CmoveY=ann.run(mouseInputY,cheeseInputY, isCat)
     
         #eating
-        mouseRect= Rect(allMice[0].x,allMice[0].y,40,33)
-        catRect= Rect(allCats[0].x,allCats[0].y,40,33)
-        for i in range (0,len(allMice)-1):
-            for x in range (0,len(allCats)-1):
-                mouseRect=Rect(allMice[i].x,allMice[i].y,40,33)
+        MiceLength=len(allMice)
+        CheeseLength=len(allCheese)
+        CatLength=len(allCats)
+        
+        for i in range (MiceLength-1):
+            mouseRect=Rect(allMice[i].x,allMice[i].y,40,33)
+            for x in range (CatLength-1):
                 catRect= Rect(allCats[x].x,allCats[x].y,40,33)
                 if(mouseRect.colliderect(catRect)):
-                    allMice.remove(allMice[i])
+                    allMice.pop(i)
                     
-        cheeseRect= Rect(allCheese[0].x,allCheese[0].y,40,33)
-        for i in range (0,len(allMice)-1):
-            for x in range (0,len(allCheese)-1):
-                mouseRect=Rect(allMice[i].x,allMice[i].y,40,33)
+                    
+        for i in range (MiceLength-1):
+            mouseRect=Rect(allMice[i].x,allMice[i].y,40,33)
+            for x in range (CheeseLength-1):
                 cheeseRect= Rect(allCheese[x].x,allCheese[x].y,40,33)
                 if(mouseRect.colliderect(cheeseRect)):
-                    allCheese.remove(allCheese[i])
+                    allCheese.pop(i)
 
 
         for i in range (len(allMice)):
             if(allMice[i].x<=0):
                 allMice[i].x=0
         for i in range (len(allMice)):
-            if(allMice[i].x>=800):
-                allMice[i].x=800
+            if(allMice[i].x>=760):
+                allMice[i].x=760
         for i in range (len(allMice)):
             if(allMice[i].y<=300):
                 allMice[i].y=300
@@ -153,8 +148,8 @@ def game_function(ann, do_display):
             if(allCats[i].x<=0):
                 allCats[i].x=0
         for i in range (len(allCats)):
-            if(allCats[i].x>=800):
-                allCats[i].x=800
+            if(allCats[i].x>=760):
+                allCats[i].x=760
         for i in range (len(allCats)):
             if(allCats[i].y<=300):
                 allCats[i].y=300
