@@ -113,14 +113,14 @@ def game_function(ann, do_display):
         #eating  
         for m in list (allMice):
             mouseRect=Rect(m.x,m.y,40,33)
-            for c in range (allCats):
+            for c in list (allCats):
                 catRect= Rect(c.x,c.y,40,33)
                 if(mouseRect.colliderect(catRect)):
                     allMice.remove(m)
                     
                     
         for m in list (allMice):
-            mouseRect=Rect(allMice[i].x,allMice[i].y,40,33)
+            mouseRect=Rect(m.x,m.y,40,33)
             for ch in list (allCheese):
                 cheeseRect= Rect(ch.x,ch.y,40,33)
                 if(mouseRect.colliderect(cheeseRect)):
