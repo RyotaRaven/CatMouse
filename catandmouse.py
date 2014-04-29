@@ -101,26 +101,29 @@ def game_function(ann, do_display):
         isMouse=0
         isCat=1
 
-        MmoveX=ann.run(catInputX,cheeseInputX, isMouse)
-        MmoveY=ann.run(catInputY,cheeseInputY, isMouse)
-        CmoveX=ann.run(mouseInputX,cheeseInputX, isCat)
-        CmoveY=ann.run(mouseInputY,cheeseInputY, isCat)
+        #MmoveX=ann.run(catInputX,cheeseInputX, isMouse)
+        #MmoveY=ann.run(catInputY,cheeseInputY, isMouse)
+        MmoveX=-10;
+        MmoveY=-10;
+        #CmoveX=ann.run(mouseInputX,cheeseInputX, isCat)
+        #CmoveY=ann.run(mouseInputY,cheeseInputY, isCat)
     
         #eating
-        mouseRect= Rect(allMice[0].x,allMice[0].y,40,33)
+        """mouseRect= Rect(allMice[0].x,allMice[0].y,40,33)
         catRect= Rect(allCats[0].x,allCats[0].y,40,33)
         for i in range (len(allMice)):
             for x in range (len(allCats)):
                 mouseRect=Rect(allMice[i].x,allMice[i].y,40,33)
                 catRect= Rect(allCats[x].x,allCats[x].y,40,33)
                 if(mouseRect.colliderect(catRect)):
-                    allMice.remove(i)
+                    allMice.remove(i)"""
+                    
         cheeseRect= Rect(allCheese[0].x,allCheese[0].y,40,33)
         for i in range (len(allMice)):
             for x in range (len(allCheese)):
                 mouseRect=Rect(allMice[i].x,allMice[i].y,40,33)
                 catRect= Rect(allCheese[x].x,allCheese[x].y,40,33)
-                if(mouseRect.colliderect(catRect)):
+                if(mouseRect.colliderect(cheeseRect)):
                     allCheese.remove(i)
 
 
@@ -153,16 +156,23 @@ def game_function(ann, do_display):
                 
         #handle events
         
-        #if (MmoveX < 0):
-            #mouse moves left
-        #elif (MmoveX > 0):
+        if(MmoveX < 0):
+                for i in range(len(allMice)):
+                    allMice[i].x-=allMice[i].velocity
+        elif(MmoveX > 0):
+                for i in range(len(allMice)):
+                    allMice[i].x+=allMice[i].velocity
             #mouse moves right
         #else:
             #mouse x does not change
 
-        #if (MmoveY < 0):
+        if(MmoveY < 0):
+                for i in range(len(allMice)):
+                    allMice[i].y-=allMice[i].velocity
             #mouse moves down
-        #elif (MmoveY > 0):
+        elif(MmoveY > 0):
+                for i in range(len(allMice)):
+                    allMice[i].y+=allMice[i].velocity
             #mouse moves up
         #else:
             #mouse y does not change
