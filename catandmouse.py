@@ -22,6 +22,7 @@ class Mouse:
         self.life=100 #lifevalue (size?)
         self.canBreed=True
         self.hunger=50 #idk how big to make the hunger timer
+        self.score=0
         
 
 #CAT CLASS
@@ -38,7 +39,7 @@ class Cat:
 pygame.init()
 
 #Running the fame at 30 FPS
-FPS = 30
+FPS = 20
 FPSCLOCK = pygame.time.Clock()
 
 #set up display
@@ -109,22 +110,22 @@ def game_function(ann, do_display):
         #CmoveY=ann.run(mouseInputY,cheeseInputY, isCat)
     
         #eating
-        """mouseRect= Rect(allMice[0].x,allMice[0].y,40,33)
+        mouseRect= Rect(allMice[0].x,allMice[0].y,40,33)
         catRect= Rect(allCats[0].x,allCats[0].y,40,33)
-        for i in range (len(allMice)):
-            for x in range (len(allCats)):
+        for i in range (0,len(allMice)-1):
+            for x in range (0,len(allCats)-1):
                 mouseRect=Rect(allMice[i].x,allMice[i].y,40,33)
                 catRect= Rect(allCats[x].x,allCats[x].y,40,33)
                 if(mouseRect.colliderect(catRect)):
-                    allMice.remove(i)"""
+                    allMice.remove(allMice[i])
                     
         cheeseRect= Rect(allCheese[0].x,allCheese[0].y,40,33)
-        for i in range (len(allMice)):
-            for x in range (len(allCheese)):
+        for i in range (0,len(allMice)-1):
+            for x in range (0,len(allCheese)-1):
                 mouseRect=Rect(allMice[i].x,allMice[i].y,40,33)
-                catRect= Rect(allCheese[x].x,allCheese[x].y,40,33)
+                cheeseRect= Rect(allCheese[x].x,allCheese[x].y,40,33)
                 if(mouseRect.colliderect(cheeseRect)):
-                    allCheese.remove(i)
+                    allCheese.remove(allCheese[i])
 
 
         for i in range (len(allMice)):
