@@ -19,7 +19,7 @@ class Mouse:
         self.x = random.randrange(0,800)
         self.y = random.randrange(300,880)
         self.velocity = 15
-        self.life=100 #lifevalue (size?)
+        self.life=100 #lifevalue (si5ze?)
         self.canBreed=True
         self.hunger=50 #idk how big to make the hunger timer
         self.score=0
