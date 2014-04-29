@@ -115,20 +115,20 @@ def game_function(ann, do_display):
         CheeseLength=len(allCheese)
         CatLength=len(allCats)
         
-        for mou in list (allMice):
-            mouseRect=Rect(mou.x,mou.y,40,33)
-            for c in list (allCats):
-                catRect= Rect(c.x,c.y,40,33)
+        for i in range (MiceLength-1):
+            mouseRect=Rect(allMice[i].x,allMice[i].y,40,33)
+            for x in range (CatLength-1):
+                catRect= Rect(allCats[x].x,allCats[x].y,40,33)
                 if(mouseRect.colliderect(catRect)):
-                    allMice.remove(mou)
+                    allMice.pop(i)
                     
                     
-        for mou in list(allMice):
-            mouseRect=Rect(mou.x,mou.y,40,33)
-            for ch in list(allCheese):
-                cheeseRect= Rect(ch.x,ch.y,40,33)
+        for i in range (MiceLength-1):
+            mouseRect=Rect(allMice[i].x,allMice[i].y,40,33)
+            for x in range (CheeseLength-1):
+                cheeseRect= Rect(allCheese[x].x,allCheese[x].y,40,33)
                 if(mouseRect.colliderect(cheeseRect)):
-                    allCheese.remove(ch)
+                    allCheese.pop(i)
 
 
         for i in range (len(allMice)):
