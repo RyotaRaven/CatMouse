@@ -47,6 +47,7 @@ display = pygame.display.set_mode((891,880), 0, 32)
 
 BLACK = (0,0,0)
 
+
 def game_function(ann, do_display):
     random.seed()
     mouse= pygame.image.load("Mouse.png")
@@ -58,6 +59,8 @@ def game_function(ann, do_display):
     floor= pygame.image.load("Floor.png")
     floor.convert()
     banner= pygame.image.load("TK.png")
+
+    cheeseCount=0
 
     #define game state
     allCheese = []
@@ -79,6 +82,11 @@ def game_function(ann, do_display):
     #game loop
     while (len(allMice) != 0 and len(allCats) != 0):
         #update state
+        cheeseCount+=1
+
+        if(cheeseCount%50==0):
+            allCheese.append(Cheese())
+        
         mouseInputX=[] #goes to cat
         mouseInputY=[]
         catInputX=[] #goes to mouse
