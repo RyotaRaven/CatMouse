@@ -110,25 +110,21 @@ def game_function(ann, do_display):
         isMouse=0
         isCat=1
     
-        #eating
-        MiceLength=len(allMice)
-        CheeseLength=len(allCheese)
-        CatLength=len(allCats)
-        
-        for i in range (MiceLength-1):
-            mouseRect=Rect(allMice[i].x,allMice[i].y,40,33)
-            for x in range (CatLength-1):
-                catRect= Rect(allCats[x].x,allCats[x].y,40,33)
+        #eating  
+        for m in list (allMice):
+            mouseRect=Rect(m.x,m.y,40,33)
+            for c in list (allCats):
+                catRect= Rect(c.x,c.y,40,33)
                 if(mouseRect.colliderect(catRect)):
-                    allMice.pop(i)
+                    allMice.remove(m)
                     
                     
-        for i in range (MiceLength-1):
-            mouseRect=Rect(allMice[i].x,allMice[i].y,40,33)
-            for x in range (CheeseLength-1):
-                cheeseRect= Rect(allCheese[x].x,allCheese[x].y,40,33)
+        for m in list (allMice):
+            mouseRect=Rect(m.x,m.y,40,33)
+            for ch in list (allCheese):
+                cheeseRect= Rect(ch.x,ch.y,40,33)
                 if(mouseRect.colliderect(cheeseRect)):
-                    allCheese.pop(i)
+                    allCheese.remove(ch)
 
 
         for i in range (len(allMice)):
@@ -141,8 +137,8 @@ def game_function(ann, do_display):
             if(allMice[i].y<=300):
                 allMice[i].y=300
         for i in range (len(allMice)):
-            if(allMice[i].y>=880):
-                allMice[i].y=880
+            if(allMice[i].y>=850):
+                allMice[i].y=850
                 
         for i in range (len(allCats)):
             if(allCats[i].x<=0):
@@ -154,8 +150,8 @@ def game_function(ann, do_display):
             if(allCats[i].y<=300):
                 allCats[i].y=300
         for i in range (len(allCats)):
-            if(allCats[i].y>=880):
-                allCats[i].y=880
+            if(allCats[i].y>=850):
+                allCats[i].y=850
             
                 
         #handle events
